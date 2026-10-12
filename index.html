@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070a13">
+<meta name="description" content="Um pequeno universo feito por Kauan para sua Minha Vida, Giovanna.">
+<title>Para Minha Vida ✦</title>
+<style>
+:root{--bg:#070a13;--navy:#101a30;--gold:#e7c77b;--gold2:#fff0c7;--text:#f8f4eb;--muted:#c0c7d7;--line:rgba(231,199,123,.27);--panel:rgba(14,21,39,.86)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% 10%,#1b2a4c 0,transparent 35%),radial-gradient(ellipse at 90% 65%,#241b3b 0,transparent 32%),var(--bg);color:var(--text);font-family:Georgia,"Times New Roman",serif;min-height:100vh;overflow-x:hidden}
+#sky{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}.star{position:absolute;width:2px;height:2px;background:#fff1c5;border-radius:50%;opacity:.45;animation:twinkle 4s ease-in-out infinite}.star.blue{background:#b8d3ff}@keyframes twinkle{0%,100%{opacity:.18;transform:scale(.7)}50%{opacity:.9;transform:scale(1.25)}}.shooting{position:absolute;width:70px;height:1px;background:linear-gradient(90deg,transparent,#fff0c7,transparent);transform:rotate(-35deg);opacity:0;animation:shoot 9s linear infinite}@keyframes shoot{0%,82%,100%{opacity:0;transform:translate(0,0) rotate(-35deg)}84%{opacity:.8}90%{opacity:0;transform:translate(-140px,90px) rotate(-35deg)}}
+button{font:inherit;cursor:pointer}.app{position:relative;z-index:1;min-height:100vh}.topbar{position:sticky;top:0;z-index:10;background:rgba(7,10,19,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(231,199,123,.13);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}.brand{font:10px system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}.menu-btn{border:1px solid var(--line);background:#111a2d;color:var(--gold2);border-radius:999px;padding:8px 12px;font:12px system-ui,sans-serif}.progress{height:2px;background:rgba(255,255,255,.06)}.progress span{display:block;width:12.5%;height:100%;background:var(--gold);transition:width .4s}
+main{width:min(820px,calc(100% - 30px));margin:auto;padding:26px 0 40px}.screen{display:none;min-height:calc(100svh - 108px);animation:enter .45s ease both}.screen.active{display:flex;flex-direction:column;justify-content:center}.hero,.finale{align-items:center;text-align:center}@keyframes enter{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}.eyebrow{font:10px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.23em;color:var(--gold);margin-bottom:12px}.hero h1{font-size:clamp(42px,11vw,78px);line-height:1.02;font-weight:400;color:var(--gold2);margin:12px 0;letter-spacing:-.04em;text-shadow:0 0 28px #e7c77b2b}.hero p,.lead{max-width:620px;color:var(--muted);font-size:clamp(16px,4vw,19px);line-height:1.75}.hero p{margin:10px auto}.symbol{font-size:22px;color:var(--gold);letter-spacing:.4em;margin:14px 0}.orbit{width:124px;height:124px;border:1px solid #e7c77b70;border-radius:50%;display:grid;place-items:center;margin:12px auto 18px;position:relative;box-shadow:0 0 50px #dcb86616,inset 0 0 30px #dcb8660c}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #a8c9ff45;border-radius:50%;width:155px;height:52px;transform:rotate(-35deg)}.orbit:after{transform:rotate(35deg);width:155px;height:52px}.orbit span{font-size:42px;color:var(--gold2);text-shadow:0 0 22px #e7c77b75}.btnrow{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}.btn{border:1px solid #e7c77b7a;background:linear-gradient(135deg,#e7c77b1a,#1a2238a8);color:var(--gold2);border-radius:999px;padding:12px 18px;font:12px system-ui,sans-serif;letter-spacing:.025em;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px);background:#e7c77b27}.btn.secondary{border-color:#ffffff2c;color:#d9deea;background:#ffffff08}.hint{font:11px system-ui,sans-serif;color:#939db4;margin-top:16px}
+h2{font-size:clamp(31px,7.5vw,49px);line-height:1.12;font-weight:400;color:var(--gold2);margin:8px 0 16px}h3{font-weight:400;color:var(--gold2);margin:0 0 8px;font-size:22px}.lead{margin:0 0 24px}.panel{border:1px solid var(--line);background:var(--panel);border-radius:22px;padding:clamp(20px,5vw,34px);box-shadow:0 18px 60px #0002;backdrop-filter:blur(8px)}.panel p{color:#e0e2e8;line-height:1.85}.muted{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{min-height:140px;text-align:left;padding:18px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#16213aeb,#0b1020e8);color:var(--text);transition:transform .2s,border-color .2s;display:flex;flex-direction:column;align-items:flex-start;gap:9px}.card:hover{transform:translateY(-3px);border-color:#e7c77b99}.card .icon{font-size:25px;color:var(--gold)}.card strong{font-weight:400;font-size:18px;color:var(--gold2)}.card small{font:12px/1.5 system-ui,sans-serif;color:var(--muted)}.note{border-left:2px solid var(--gold);padding:3px 0 3px 16px;color:#e4e2df;line-height:1.8}.revealbox{display:none;margin-top:14px;animation:enter .4s ease}.revealbox.open{display:block}
+.photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}.photo{border:1px solid var(--line);background:#101a30;border-radius:16px;overflow:hidden;min-height:180px;position:relative;box-shadow:0 12px 30px #0002}.photo img{display:block;width:100%;height:100%;min-height:180px;object-fit:cover;position:absolute;inset:0;transition:transform .5s}.photo:active img{transform:scale(1.035)}.photo .caption{position:absolute;bottom:0;left:0;right:0;padding:28px 12px 12px;background:linear-gradient(transparent,#050812e8);font:12px system-ui,sans-serif;color:white;z-index:2}.photo.wide{grid-column:1/-1;min-height:260px}.photo.wide img{min-height:260px;object-position:center 42%}.photo.portrait img{object-position:center 28%}.photo-button{display:block;width:100%;border:0;padding:0;background:none;text-align:left;color:inherit;position:relative;min-height:inherit}.photo-button img{position:absolute}.photo-button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}.letter p{font-size:16px}.signature{color:var(--gold2);font-style:italic;font-size:21px;margin-top:25px}.list{display:grid;gap:12px}.dream{display:flex;gap:13px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #e7c77b18;color:var(--muted);line-height:1.65}.dream:last-child{border:0}.dream span{color:var(--gold)}.envelope{width:min(270px,80%);height:165px;margin:24px auto 8px;position:relative;cursor:pointer;filter:drop-shadow(0 15px 24px #0005);transition:transform .25s}.envelope:hover{transform:translateY(-4px)}.env-body{position:absolute;inset:0;background:#192541;border:1px solid #e7c77b8c;border-radius:8px;overflow:hidden}.env-body:before,.env-body:after{content:"";position:absolute;bottom:0;width:0;height:0;border-style:solid}.env-body:before{left:0;border-width:0 134px 96px 0;border-color:transparent transparent #243452 transparent}.env-body:after{right:0;border-width:0 0 96px 134px;border-color:transparent transparent #1d2b46 transparent}.env-flap{position:absolute;top:0;left:0;width:0;height:0;border-left:135px solid transparent;border-right:135px solid transparent;border-top:100px solid #314365;transform-origin:top;transition:transform .5s;z-index:3}.seal{position:absolute;z-index:4;left:50%;top:48%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:#d8b565;color:#101525;display:grid;place-items:center;font-size:20px;box-shadow:0 0 20px #e7c77b45}.envelope.opened .env-flap{transform:rotateX(180deg)}.envelope.opened .seal{opacity:0}.secret{display:none}.secret.open{display:block;animation:enter .5s ease}.navbottom{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:26px;padding-top:17px;border-top:1px solid #e7c77b18}.navbottom .btn{padding:10px 13px}.navbottom span{font:10px system-ui,sans-serif;color:#8f98ad;text-align:center}.footer{text-align:center;color:#7f899f;font:10px system-ui,sans-serif;padding:22px 12px 34px;letter-spacing:.04em}.promise{font-size:clamp(19px,5vw,25px);line-height:1.7;color:var(--gold2);text-align:center}
+@media(max-width:420px){.cards{grid-template-columns:1fr}.card{min-height:105px}.photo-grid{gap:8px}.photo{min-height:160px}.photo img{min-height:160px}.photo.wide,.photo.wide img{min-height:230px}.topbar{padding:10px 12px}.navbottom .btn{font-size:11px;padding:9px 10px}.navbottom span{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="sky" aria-hidden="true"></div>
+<div class="app">
+<header class="topbar"><div class="brand">✦ Nosso pequeno universo</div><button class="menu-btn" onclick="go('mapa')">☰ Explorar</button></header>
+<div class="progress"><span id="progress"></span></div>
+<main>
+<section class="screen hero active" id="home">
+<div class="eyebrow">Uma surpresa feita com amor</div><div class="orbit"><span>♡</span></div>
+<h1>Para minha vida,<br>Giovanna.</h1><div class="symbol">✧ · ✦ · ✧</div>
+<p>Entre tantos lugares que existem no universo, meu lugar favorito é aquele em que posso imaginar a vida ao seu lado.</p>
+<div class="btnrow"><button class="btn" onclick="go('mapa')">Abrir nosso universo&nbsp; ✦</button></div>
+<div class="hint">Uma pequena viagem por tudo o que quero te dizer.</div>
+</section>
+
+<section class="screen" id="mapa">
+<div class="eyebrow">Escolha uma estrela</div><h2>Por onde vamos começar?</h2>
+<p class="lead">Cada estrela guarda uma parte daquilo que sinto por você. Toque em uma delas — não tem ordem certa, só coisas que quero compartilhar contigo.</p>
+<div class="cards">
+<button class="card" onclick="go('historia')"><span class="icon">✧</span><strong>A nossa história</strong><small>O dia em que um novo capítulo começou.</small></button>
+<button class="card" onclick="go('memorias')"><span class="icon">☾</span><strong>Nossas lembranças</strong><small>Momentos nossos, guardados com carinho.</small></button>
+<button class="card" onclick="go('carta')"><span class="icon">♡</span><strong>Uma carta para você</strong><small>Palavras que vêm do fundo do coração.</small></button>
+<button class="card" onclick="go('sonhos')"><span class="icon">∞</span><strong>O que ainda sonhamos</strong><small>Um futuro que quero construir com você.</small></button>
+<button class="card" onclick="go('segredo')"><span class="icon">✉</span><strong>Uma surpresa</strong><small>Uma mensagem esperando por você.</small></button>
+<button class="card" onclick="go('promessa')"><span class="icon">★</span><strong>Minha promessa</strong><small>O que quero cuidar ao seu lado.</small></button>
+</div>
+<div class="navbottom"><button class="btn secondary" onclick="go('home')">← Início</button><span>Explore na ordem que quiser.</span><button class="btn" onclick="go('historia')">Começar →</button></div>
+</section>
+
+<section class="screen" id="historia">
+<div class="eyebrow">Estrela 01 · O começo</div><h2>Algumas datas viram parte da gente.</h2>
+<div class="panel"><p>28 de junho de 2025. Uma data que passou a significar muito mais do que números no calendário: o começo de uma parte especial da minha vida.</p><p>Desde aquele dia, quando penso no futuro, penso também em tudo o que ainda quero viver contigo. Não porque eu saiba como cada capítulo vai ser, mas porque é com você que eu desejo tentar escrever essa história.</p><p class="note">Minha Vida, eu quero que a nossa história seja feita de amor, conversa, respeito, cuidado e vontade de continuar aprendendo um com o outro.</p></div>
+<div class="photo-grid"><figure class="photo wide"><img src="fotos/casal-rio.jpg" alt="Kauan e Giovanna juntos perto do rio" loading="lazy"><figcaption class="caption">Um pedacinho da nossa história. ♡</figcaption></figure></div>
+<div class="btnrow"><button class="btn" onclick="reveal('extra-historia',this)">Tem mais uma coisa que quero dizer ✦</button></div>
+<div class="panel revealbox" id="extra-historia"><p>Não quero que a gente precise ser perfeito para merecer um amor bonito. Quero que a gente possa reconhecer os erros, conversar com honestidade e transformar o carinho em atitudes, inclusive nos dias difíceis.</p></div>
+<div class="navbottom"><button class="btn secondary" onclick="go('mapa')">← Estrelas</button><span>01 / 06</span><button class="btn" onclick="go('memorias')">Próxima →</button></div>
+</section>
+
+<section class="screen" id="memorias">
+<div class="eyebrow">Estrela 02 · Nossas lembranças</div><h2>O que é nosso merece ser guardado.</h2>
+<p class="lead">Nem todo momento precisa ser grandioso para ser especial. Às vezes, basta ser um momento nosso.</p>
+<div class="photo-grid">
+<figure class="photo"><img src="fotos/casal-espelho.jpg" alt="Kauan e Giovanna em uma selfie no espelho" loading="lazy"><figcaption class="caption">Nós dois, do nosso jeitinho. ♡</figcaption></figure>
+<figure class="photo"><img src="fotos/casal-rio.jpg" alt="Kauan e Giovanna juntos perto do rio" loading="lazy"><figcaption class="caption">Uma lembrança para guardar.</figcaption></figure>
+</div>
+<div class="panel"><h3>As pequenas coisas também são enormes.</h3><p>Uma conversa que fez o dia ficar melhor. Uma risada inesperada. Um abraço que a gente queria que durasse mais. São essas coisas que, aos poucos, fazem uma história se tornar nossa.</p><p>Quero continuar criando lembranças contigo, sem precisar que tudo seja perfeito — só verdadeiro e nosso.</p></div>
+<div class="navbottom"><button class="btn secondary" onclick="go('historia')">← Anterior</button><span>02 / 06</span><button class="btn" onclick="go('carta')">Próxima →</button></div>
+</section>
+
+<section class="screen" id="carta">
+<div class="eyebrow">Estrela 03 · Uma carta para você</div><h2>Se eu pudesse te dizer tudo sem pressa…</h2>
+<div class="panel letter">
+<p>Minha Vida,</p>
+<p>Eu queria que você pudesse enxergar, nem que fosse por um instante, o lugar que ocupa dentro de mim. Você não é apenas alguém que eu amo; é alguém com quem eu quero dividir a vida de verdade — os dias bonitos, os dias cansativos, as pequenas conquistas e os planos que a gente precisa tentar de novo.</p>
+<p>Eu te amo, Giovanna. E te quero no meu futuro. Quero aprender a te ouvir melhor, compreender o que você sente e demonstrar meu amor de maneiras que façam você se sentir amada e respeitada. Quero que as minhas palavras encontrem espaço nas minhas atitudes.</p>
+<p>Viver contigo é um dos meus maiores objetivos. Quero construir ao seu lado uma história com carinho, confiança, risadas, tranquilidade e espaço para que nós dois continuemos crescendo. Não quero que o nosso amor seja uma cobrança para sermos perfeitos; quero que seja um lugar onde possamos ser sinceros, aprender e escolher cuidar um do outro.</p>
+<p>Quando penso em tudo o que ainda desejo viver, você aparece em muitos desses sonhos. Imagino os momentos simples, as conversas sem olhar o relógio, os abraços depois de um dia difícil e a paz de saber que estamos caminhando juntos. Não sei exatamente como será o futuro, mas é com você que eu desejo tentar construí-lo, um dia de cada vez.</p>
+<p>Quero viver contigo por toda a minha vida, Minha Vida. Quero que a gente tenha a oportunidade de olhar para trás um dia, ver tudo o que aprendemos e sorrir pelas coisas lindas que construímos. E quero que você saiba que, para mim, amar você também significa respeitar o seu tempo, a sua individualidade e o que você sente.</p>
+<p>Esta página é pequena perto do que sinto, mas é minha forma de te lembrar: você é muito importante para mim. Eu te amo, e quero continuar escolhendo construir esse caminho contigo, com paciência, carinho e verdade.</p>
+<div class="signature">Com todo o amor que existe em mim,<br>Kauan ♡</div>
+</div>
+<div class="navbottom"><button class="btn secondary" onclick="go('memorias')">← Anterior</button><span>03 / 06</span><button class="btn" onclick="go('sonhos')">Próxima →</button></div>
+</section>
+
+<section class="screen" id="sonhos">
+<div class="eyebrow">Estrela 04 · O que ainda sonhamos</div><h2>Não preciso conhecer todas as estrelas.</h2>
+<p class="lead">Quero continuar descobrindo o caminho com você, respeitando quem somos e cuidando da vida que podemos construir.</p>
+<div class="panel list">
+<div class="dream"><span>✦</span><div><h3>Uma vida com parceria</h3>Que a gente consiga conversar com sinceridade e se sentir ouvido, mesmo quando pensar diferente.</div></div>
+<div class="dream"><span>✦</span><div><h3>Os dias comuns</h3>Dividir momentos simples, rir de coisas bobas e encontrar felicidade nas pequenas rotinas.</div></div>
+<div class="dream"><span>✦</span><div><h3>Continuar crescendo</h3>Apoiar os sonhos um do outro e aprender a ser cada vez melhores, juntos e individualmente.</div></div>
+<div class="dream"><span>✦</span><div><h3>O nosso futuro</h3>Construir, com tempo e atitudes, uma relação em que o amor também seja paz, confiança e respeito.</div></div>
+</div>
+<div class="btnrow"><button class="btn" onclick="reveal('dream-extra',this)">E tem um sonho que guardo com carinho…</button></div>
+<div class="panel revealbox" id="dream-extra"><p>Imagino poder olhar para você daqui a muitos anos, lembrar de quando comecei a criar este pequeno site e pensar que cada passo valeu a pena porque construímos uma vida cheia de momentos nossos.</p></div>
+<div class="photo-grid"><figure class="photo wide portrait"><img src="fotos/giovanna-favorita.png" alt="Giovanna, em uma foto que Kauan gosta muito" loading="lazy"><figcaption class="caption">Você, Minha Vida. Do jeitinho que eu gosto de lembrar. ❤️</figcaption></figure></div>
+<div class="navbottom"><button class="btn secondary" onclick="go('carta')">← Anterior</button><span>04 / 06</span><button class="btn" onclick="go('segredo')">Próxima →</button></div>
+</section>
+
+<section class="screen" id="segredo">
+<div class="eyebrow">Uma pequena surpresa</div><h2 style="text-align:center">Tem uma mensagem guardada para você.</h2>
+<p class="lead" style="text-align:center">Toque no envelope para abrir. ❤️</p>
+<div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Abrir a carta surpresa" onclick="openSecret()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSecret()}"><div class="env-body"></div><div class="env-flap"></div><div class="seal">♡</div></div>
+<div class="hint" style="text-align:center">Feito especialmente para minha vida.</div>
+<div class="panel secret" id="secret-message"><div class="symbol" style="text-align:center">✧ · ♡ · ✧</div><h3 style="text-align:center">Se algum dia você esquecer…</h3><p style="text-align:center">lembra que existe alguém que olha para as estrelas e, entre tantos pensamentos, imagina como seria bonito continuar vivendo a vida ao seu lado. Eu te amo, Giovanna. Você é a minha Minha Vida. ❤️</p></div>
+<div class="navbottom"><button class="btn secondary" onclick="go('sonhos')">← Anterior</button><span>05 / 06</span><button class="btn" onclick="go('promessa')">Minha promessa →</button></div>
+</section>
+
+<section class="screen" id="promessa">
+<div class="eyebrow">A promessa que quero cultivar</div><div class="orbit"><span>♡</span></div>
+<h2 style="text-align:center">Amar você também é aprender a cuidar.</h2>
+<div class="panel">
+<p class="promise">Minha Vida, eu não posso prometer que todos os dias serão fáceis. Mas quero me comprometer a não tratar o nosso amor como algo que se cuida apenas quando tudo está bem.</p>
+<p>Quero continuar aprendendo a te ouvir, respeitar seus sentimentos, conversar com sinceridade e reconhecer quando eu errar. Quero demonstrar o que sinto não só com palavras bonitas, mas também com paciência, presença e atitudes.</p>
+<p>Quero que a gente possa ser nós mesmos, falar sobre o que dói sem medo e celebrar o que nos faz felizes. Que o nosso amor tenha espaço para respirar, para amadurecer e para que cada um continue sendo quem é.</p>
+<p>Eu te quero no meu futuro, Giovanna. Quero construir essa vida contigo, um dia de cada vez, sem exigir perfeição — mas escolhendo, sempre que pudermos, o cuidado, o respeito e a verdade.</p>
+<p class="promise">Eu te amo, Minha Vida. E quero continuar cuidando desse “nós” junto com você. ❤️</p>
+<div class="signature">Com amor, Kauan.</div>
+</div>
+<div class="photo-grid"><figure class="photo wide"><img src="fotos/kauan.jpg" alt="Kauan, que preparou este presente" loading="lazy"><figcaption class="caption">De mim, para você. Sempre com carinho. ♡</figcaption></figure></div>
+<div class="btnrow"><button class="btn" onclick="go('mapa')">Explorar nosso universo de novo ✦</button><button class="btn secondary" onclick="go('home')">Voltar ao começo</button></div>
+<div class="symbol" style="text-align:center">✧ · ★ · ✧</div>
+</section>
+</main>
+<footer class="footer">Feito com carinho por Kauan, para Giovanna · 28.06.2025</footer>
+</div>
+<script>
+const sky=document.getElementById('sky');
+for(let i=0;i<95;i++){const s=document.createElement('i');s.className='star'+(i%4===0?' blue':'');s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*5+'s';s.style.animationDuration=(3+Math.random()*4)+'s';sky.appendChild(s)}
+for(let i=0;i<3;i++){const s=document.createElement('i');s.className='shooting';s.style.left=(65+Math.random()*35)+'%';s.style.top=(Math.random()*55)+'%';s.style.animationDelay=(i*4+2)+'s';sky.appendChild(s)}
+const order=['home','mapa','historia','memorias','carta','sonhos','segredo','promessa'];
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));const target=document.getElementById(id);if(!target)return;target.classList.add('active');document.getElementById('progress').style.width=((order.indexOf(id)+1)/order.length*100)+'%';window.scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'','#'+id)}
+function reveal(id,btn){const el=document.getElementById(id);el.classList.toggle('open');if(btn)btn.textContent=el.classList.contains('open')?'Fechar mensagem ✕':'Ler mais ✦'}
+function openSecret(){document.getElementById('envelope').classList.add('opened');document.getElementById('secret-message').classList.add('open')}
+if(location.hash&&document.getElementById(location.hash.slice(1)))go(location.hash.slice(1));
+</script>
+</body>
+</html>
