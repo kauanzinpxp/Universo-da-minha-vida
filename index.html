@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b16">
+  <meta name="description" content="Um pequeno universo feito com amor para Giovanna.">
+  <title>Para minha vida ✦</title>
+  <style>
+    :root {
+      --night: #080b16;
+      --navy: #10182c;
+      --gold: #e7c77b;
+      --gold-light: #fff0c5;
+      --muted: #c4c8d6;
+      --panel: rgba(17, 23, 42, .74);
+      --line: rgba(231, 199, 123, .24);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: #f7f3e9; background:
+        radial-gradient(ellipse at 15% 15%, rgba(38, 57, 100, .48), transparent 38%),
+        radial-gradient(ellipse at 85% 45%, rgba(53, 42, 86, .28), transparent 35%),
+        linear-gradient(180deg, #080b16 0%, #0c1222 48%, #070a13 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7; overflow-x: hidden;
+    }
+    #stars { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .75; }
+    .star { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #fff3ce; animation: twinkle 4s ease-in-out infinite; }
+    .star:nth-child(3n) { background: #a9c8ff; animation-duration: 5.5s; }
+    .star:nth-child(4n) { width: 3px; height: 3px; }
+    @keyframes twinkle { 0%,100% { opacity: .2; transform: scale(.8); } 50% { opacity: .95; transform: scale(1.25); } }
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes glow { 0%,100% { text-shadow: 0 0 12px rgba(231,199,123,.15); } 50% { text-shadow: 0 0 28px rgba(231,199,123,.45); } }
+    .wrap { width: min(920px, calc(100% - 36px)); margin: 0 auto; }
+    .hero { min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 72px 0 56px; position: relative; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .24em; color: var(--gold); font: 11px/1.6 system-ui, sans-serif; }
+    h1 { font-size: clamp(42px, 10vw, 82px); line-height: 1.04; font-weight: 400; margin: 18px 0; color: var(--gold-light); animation: glow 5s ease-in-out infinite; }
+    .hero p { max-width: 600px; margin: 0 auto; color: var(--muted); font-size: clamp(17px, 4vw, 21px); }
+    .gold-line { width: 76px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 28px auto; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 1px solid rgba(231,199,123,.62); border-radius: 999px; padding: 13px 22px; margin-top: 28px; color: var(--gold-light); text-decoration: none; background: rgba(231,199,123,.07); font: 13px system-ui, sans-serif; letter-spacing: .04em; transition: transform .25s ease, background .25s ease; cursor: pointer; }
+    .button:hover { transform: translateY(-2px); background: rgba(231,199,123,.14); }
+    .scroll-note { position: absolute; bottom: 22px; left: 0; right: 0; color: #9da5b9; font: 10px system-ui, sans-serif; letter-spacing: .18em; text-transform: uppercase; }
+    section { padding: 72px 0; }
+    .section-kicker { color: var(--gold); font: 11px system-ui, sans-serif; text-transform: uppercase; letter-spacing: .22em; }
+    h2 { font-size: clamp(30px, 7vw, 46px); line-height: 1.16; font-weight: 400; color: var(--gold-light); margin: 10px 0 20px; }
+    .intro { max-width: 670px; color: var(--muted); font-size: 17px; }
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: clamp(22px, 6vw, 42px); box-shadow: 0 20px 70px rgba(0,0,0,.18); backdrop-filter: blur(8px); }
+    .timeline { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
+    .memory { display: grid; grid-template-columns: 42px 1fr; gap: 16px; align-items: start; border: 1px solid rgba(231,199,123,.15); background: rgba(9,13,25,.48); padding: 20px; border-radius: 16px; }
+    .memory-icon { color: var(--gold); font-size: 23px; text-align: center; }
+    .memory h3 { color: var(--gold-light); font-size: 21px; font-weight: 400; margin: 0 0 6px; }
+    .memory p { color: var(--muted); margin: 0; font-size: 15px; }
+    .photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-top: 24px; }
+    .photo-slot { min-height: 160px; display: grid; place-items: center; text-align: center; padding: 18px; border-radius: 16px; border: 1px dashed rgba(231,199,123,.42); background: linear-gradient(145deg, rgba(28,39,66,.65), rgba(10,13,25,.8)); color: #c7c9d4; font: 13px/1.6 system-ui, sans-serif; }
+    .photo-slot span { display: block; color: var(--gold); font-size: 26px; margin-bottom: 8px; }
+    .letter { color: #e5e3e0; font-size: 17px; }
+    .letter p { margin: 0 0 18px; }
+    .signature { color: var(--gold-light); font-style: italic; font-size: 22px; margin-top: 28px; }
+    .dreams { display: grid; gap: 12px; margin-top: 25px; }
+    .dream { display: flex; gap: 13px; align-items: start; color: var(--muted); }
+    .dream b { color: var(--gold); font-weight: 400; }
+    .finale { text-align: center; padding-bottom: 100px; }
+    .constellation { color: var(--gold); font-size: 34px; letter-spacing: .35em; margin: 16px 0; animation: glow 4s infinite; }
+    .finale blockquote { max-width: 690px; margin: 20px auto; color: var(--gold-light); font-size: clamp(24px, 5.8vw, 38px); line-height: 1.4; font-style: italic; }
+    footer { text-align: center; color: #8e96aa; font: 11px system-ui, sans-serif; letter-spacing: .05em; padding: 0 20px 32px; }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (min-width: 680px) {
+      .timeline { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .photo-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+      .photo-slot { min-height: 190px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="stars" aria-hidden="true"></div>
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Um pequeno universo feito para você</div>
+      <h1>Para minha vida,<br>Giovanna ✦</h1>
+      <div class="gold-line"></div>
+      <p>Se eu pudesse escolher um lugar em meio a toda a imensidão do universo, escolheria aquele em que nossos caminhos continuam lado a lado.</p>
+      <a class="button" href="#inicio">✧ Entrar no nosso universo</a>
+    </div>
+    <div class="scroll-note">feito com amor · desde 28.06.2025</div>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <div class="wrap reveal">
+        <div class="section-kicker">01 · O nosso começo</div>
+        <h2>Algumas datas viram estrelas.</h2>
+        <div class="panel">
+          <p class="intro">28 de junho de 2025. Um dia que passou a fazer parte da minha história de um jeito que nenhuma outra data poderia fazer. Desde então, não penso no futuro apenas como algo que vai chegar: penso nele também como tudo aquilo que ainda quero viver com você.</p>
+          <p class="intro">Este cantinho é uma pequena tentativa de guardar em palavras algo muito maior do que elas: o amor que sinto por você, Minha Vida.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap reveal">
+        <div class="section-kicker">02 · Constelação de lembranças</div>
+        <h2>O que é nosso merece ser lembrado.</h2>
+        <p class="intro">Cada lembrança é uma luz diferente. Aqui vamos colocar os momentos, as brincadeiras, as conversas e as pequenas coisas que fazem a nossa história ser só nossa.</p>
+        <div class="timeline">
+          <article class="memory"><div class="memory-icon">✧</div><div><h3>O nosso início</h3><p>28/06/2025 — o começo de uma parte muito especial da minha vida.</p></div></article>
+          <article class="memory"><div class="memory-icon">☾</div><div><h3>Os dias simples</h3><p>As conversas, os sorrisos e aqueles instantes comuns que ficam especiais só porque são com você.</p></div></article>
+          <article class="memory"><div class="memory-icon">♡</div><div><h3>Mesmo nos dias difíceis</h3><p>Nem todos os dias são leves, mas quero aprender a ouvir, compreender e cuidar melhor do que estamos construindo.</p></div></article>
+          <article class="memory"><div class="memory-icon">∞</div><div><h3>Ainda temos tanto</h3><p>Há lugares para conhecer, sonhos para realizar e muitos capítulos que ainda não escrevemos.</p></div></article>
+        </div>
+        <div class="photo-grid" aria-label="Espaços reservados para fotos do casal">
+          <div class="photo-slot"><div><span>＋</span>Uma foto favorita de vocês</div></div>
+          <div class="photo-slot"><div><span>＋</span>Um momento inesquecível</div></div>
+          <div class="photo-slot"><div><span>＋</span>Uma lembrança engraçada</div></div>
+          <div class="photo-slot"><div><span>＋</span>Um sonho para o futuro</div></div>
+        </div>
+        <p style="color:#939bad;font:12px/1.6 system-ui,sans-serif;margin-top:12px">As molduras acima são espaços provisórios. Quando você enviar as fotos, posso adaptar o site para exibi-las de verdade.</p>
+      </div>
+    </section>
+
+    <section id="carta">
+      <div class="wrap reveal">
+        <div class="section-kicker">03 · Uma carta para você</div>
+        <h2>Se meu coração pudesse falar sem pressa…</h2>
+        <div class="panel letter">
+          <p>Minha Vida,</p>
+          <p>Eu queria que você pudesse enxergar, nem que fosse por um instante, o lugar que ocupa dentro de mim. Você não é apenas alguém que eu amo; você é alguém com quem eu quero dividir a vida de verdade — os dias bonitos, os dias cansativos, as pequenas conquistas, os planos que dão certo e aqueles que a gente precisa tentar de novo.</p>
+          <p>Eu te amo, Giovanna. E te quero no meu futuro, não só nos momentos em que tudo parece fácil, mas também na vida real, que às vezes exige paciência, conversa, cuidado e coragem. Quero continuar aprendendo a te ouvir melhor, a compreender o que você sente e a demonstrar meu amor de maneiras que façam você se sentir amada e respeitada.</p>
+          <p>Viver contigo é um dos meus maiores objetivos. Quero construir ao seu lado uma história da qual nós dois possamos nos orgulhar: uma vida com carinho, confiança, risadas, tranquilidade e espaço para que cada um continue crescendo. Não quero que o nosso amor seja uma cobrança para sermos perfeitos; quero que seja um lugar onde possamos ser sinceros, aprender e escolher cuidar um do outro.</p>
+          <p>Quando penso em tudo o que ainda desejo viver, você aparece em muitos desses sonhos. Imagino os momentos simples, as conversas sem olhar o relógio, os abraços depois de um dia difícil e a paz de saber que estamos caminhando juntos. Não sei exatamente como será o futuro, mas sei que é com você que eu desejo tentar construí-lo, um dia de cada vez.</p>
+          <p>Se existe algo que eu quero que você guarde desta carta, é isto: eu te amo e quero compartilhar a minha vida contigo. Quero que esse amor apareça não apenas nas palavras bonitas, mas também nas minhas atitudes, na paciência que eu aprender, no respeito que eu demonstrar e no cuidado que eu tiver com nós dois.</p>
+          <p>Você é a minha pessoa querida, a minha Minha Vida, e esta pequena página é só uma forma de te lembrar de algo que não cabe inteiro numa tela: você é muito importante para mim. Que ainda possamos olhar para trás um dia, ver tudo o que superamos e sorrir por todas as coisas lindas que construímos juntos.</p>
+          <p class="signature">Com todo o amor que existe em mim,<br>Kauan ♡</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap reveal">
+        <div class="section-kicker">04 · O futuro que imagino</div>
+        <h2>Não preciso conhecer todas as estrelas.</h2>
+        <p class="intro">Só quero continuar descobrindo o caminho, com carinho e intenção, ao seu lado.</p>
+        <div class="panel">
+          <div class="dreams">
+            <div class="dream"><b>✦</b><span>Construir uma relação em que nós dois possamos falar com sinceridade e nos sentir ouvidos.</span></div>
+            <div class="dream"><b>✦</b><span>Celebrar as pequenas vitórias e apoiar um ao outro quando a vida pesar.</span></div>
+            <div class="dream"><b>✦</b><span>Criar lembranças que um dia vamos contar sorrindo, lembrando de como tudo começou.</span></div>
+            <div class="dream"><b>✦</b><span>Construir, com tempo e atitudes, uma vida em que o amor seja também paz, parceria e respeito.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="finale">
+      <div class="wrap reveal">
+        <div class="section-kicker">05 · Para sempre lembrar</div>
+        <div class="constellation">✧ · ♡ · ✧</div>
+        <blockquote>“Entre todas as vidas que eu poderia imaginar, é ao seu lado que eu quero construir a minha.”</blockquote>
+        <div class="gold-line"></div>
+        <p class="intro" style="margin-left:auto;margin-right:auto">Feliz por ter você na minha história, Minha Vida.<br>Que este seja só mais um capítulo de tantos que ainda podemos escrever. ❤️</p>
+        <a class="button" href="#inicio">↟ Voltar ao começo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>Feito com carinho por Kauan, para Giovanna · 28.06.2025</footer>
+
+  <script>
+    // Pequenas estrelas decorativas, sem bibliotecas externas.
+    const sky = document.getElementById('stars');
+    for (let i = 0; i < 85; i++) {
+      const star = document.createElement('i');
+      star.className = 'star';
+      star.style.left = (Math.random() * 100) + '%';
+      star.style.top = (Math.random() * 100) + '%';
+      star.style.animationDelay = (Math.random() * 5) + 's';
+      sky.appendChild(star);
+    }
+    // Revela as seções suavemente conforme a pessoa percorre a página.
+    const sections = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      sections.forEach(section => observer.observe(section));
+    } else {
+      sections.forEach(section => section.classList.add('visible'));
+    }
+  </script>
+</body>
+</html>
